@@ -41,13 +41,12 @@ const dias ={
     6: 'Sábado',
 }
 
-console.log( dias [1] );
+console.log( dias [10] || 'Día no válido' );
 
 
 //Segunda forma: Array
 const diaSemana = [ 'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado' ];
 
 console.log( diaSemana [3] );
-
 
 
