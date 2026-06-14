@@ -16,11 +16,12 @@
     </header>
     
     <div class="row mt-2">
-        <div class="col text-center">
+
+        <div id='divBotones' class="col text-center">
             
-            <button class="btn-danger">Nuevo Juego</button>
-            <button class="btn-primary">Pedir Carta</button>
-            <button class="btn-primary">Detener</button>
+            <button id="btnNuevo" class="btn btn-danger">Nuevo Juego</button>
+            <button id="btnPedir" class="btn btn-primary">Pedir Carta</button>
+            <button id="btnDetener" class="btn btn-primary">Detener</button>
 
         </div>
     </div>
@@ -28,9 +29,9 @@
     <div class="row container">
         <div class="col">
 
-            <h1> Jugador 1 - <small>Puntos: 0</small></h1>
+            <h1> Jugador 1 - <small id="puntos-jugador">Puntos: 0</small></h1>
             <div id="jugador-cartas">
-                <img class="carta" src="/02-Blackjack/assets/cartas/2C.png" alt="">
+                <!-- Aqui se insertan dinamicamente las cartas -->
             </div>
 
         </div>
@@ -40,9 +41,9 @@
     <div class="row container mt-2">
         <div class="col">
 
-            <h1> Computadora - <small>Puntos: 0</small></h1>
+            <h1> Computadora - <small id="puntos-computadora">Puntos: 0</small></h1>
             <div id="computadora-cartas">
-                <img class="carta" src="/02-Blackjack/assets/cartas/3C.png" alt="">
+                <!-- Aqui se insertan dinamicamente las cartas -->
             </div> 
 
         </div>
