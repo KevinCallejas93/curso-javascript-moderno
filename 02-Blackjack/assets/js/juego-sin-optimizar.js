@@ -66,10 +66,10 @@ const valorCarta = ( carta ) => {
     
     //Tarea Reducir esto con operador ternario
     // if ( isNaN( valor ) ) {
-        //     puntos = ( valor === 'A' ) ? 11 : 10;
-        // } else {
-            //     puntos = valor * 1;
-            // }
+    //         puntos = ( valor === 'A' ) ? 11 : 10;
+    // } else {
+    //     puntos = valor * 1;
+    // }
             
     //Operador Ternario
     return ( isNaN( valor ) ) ? 
