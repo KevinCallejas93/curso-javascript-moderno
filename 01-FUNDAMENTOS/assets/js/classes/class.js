@@ -12,6 +12,7 @@ class Persona {
     nombre = ''; //Notese que utilizamos ; en vez de , porque en js no es permitido usarlas.
     codigo = ''; //Recuerda que esto no es inicializar variables, estamos inicializando propiedades de una clase
     frase = '';
+    comida= '';
 
     //El constructor es el unico objeto que retorna una instancia y no undefined aunque hagamos hagamos return undefined
     constructor( nombre = 'Sin Nombre', codigo = 'Sin Codigo', frase = 'Sin Frase' ) { //En otros lenguajes esto marca error, en js no
@@ -19,10 +20,20 @@ class Persona {
         //codigo = 'ABC'; //Esto da error por el use strict, codigo no es de este scope {}
         this.nombre = nombre; //forma correcta, el this da acceso y hace referencia a codigo definido fuera de este scope
         this.codigo = codigo;
-        this.frase = frase; 
+        this.frase = frase;    
+    }
+    //Lo siguiente es un metodo y se acostumbra crearlos despues del contructor aunque no es obligatorio, se pueden crear antes del constructor.
+    quienSoy(){
+        console.log(`Soy ${ this.nombre } y mi identidad es ${ this.codigo }`);
+    }
+
+    miFrase() {
         
+        this.quienSoy();
+        console.log(`${ this.codigo } dice: ${ this.frase }`);
         
     }
+
 }
 
 //La idea principal de las clases es que podemos tener propiedades 
@@ -31,5 +42,9 @@ const spiderman = new Persona( 'Peter Parker', 'Spidey', 'Soy Spiderman' ); //Es
 const ironman = new Persona( 'Tony Stark', 'Ironman', 'Soy Ironman' ); //La ventaja de esto es que si quiero otro objeto con las mismas propiedades, solo lo creo de esta forma
 console.log( spiderman, ironman );
 
+//Llamamos al metodo, sin parentesis hacemos referencia pero no ejecutamos el metodo.
+// spiderman.quienSoy();
+// ironman.quienSoy();
 
-
+spiderman.miFrase();
+ironman.miFrase();
