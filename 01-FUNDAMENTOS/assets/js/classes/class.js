@@ -1,10 +1,5 @@
 
-//Sintaxis de las clases en js y utilizamos Upper Camel Case
-// class Name {
-//     constructor(parameters) {
-        
-//     }
-// }
+//Codigo limpio sin tanto comentario en sub-classes.js
 //Flujo buenas practicas: 1.Propiedades y Metodos Estaticos, 2. Constructor, 3. Set y Gets, 4. Metodos 5. Todo lo privado al final
 // Ejemplo Practico: Primero se ejecuta el constructor y luego nos regresa la instancia de clase
 class Persona {
