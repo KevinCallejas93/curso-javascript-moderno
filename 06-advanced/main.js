@@ -3,6 +3,9 @@ import javascriptLogo from './javascript.svg';
 import { environmentsComponent } from './src/concepts/01-environments';
 import { demoComponent } from './src/concepts/demo';
 import { callbacksComponent } from './src/concepts/02-callbacks';
+import { promiseComponent } from './src/concepts/03-promises';
+import { promiseHellComponent } from './src/concepts/promise-hell';
+import { promiseAllComponent } from './src/concepts/promise-all';
 
 
 document.querySelector('#app').innerHTML = `
@@ -24,5 +27,7 @@ document.querySelector('#app').innerHTML = `
 
 const element = document.querySelector('.card');
 
-callbacksComponent( element );
-
+// callbacksComponent( element );
+// promiseComponent( element );
+// promiseHellComponent( element );
+promiseAllComponent( element );
