@@ -13,7 +13,7 @@ export const promiseRaceComponent = ( element ) => {
 
     Promise.race([ //Igual que Promise.All se envia un arreglo de promesas
         slowPromise(),
-        midiumPromise(),
+        mediumPromise(),
         fastPromise(),
     ]).then( renderValue );
 
@@ -25,7 +25,7 @@ const slowPromise = () => new Promise ( resolve => {
     }, 2000);
 });
 
-const midiumPromise = () => new Promise ( resolve => {
+const mediumPromise = () => new Promise ( resolve => {
     setTimeout(() => {
         resolve('Midium Promise');
     }, 1000);

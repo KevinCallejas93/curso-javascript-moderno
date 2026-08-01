@@ -8,6 +8,10 @@ import { promiseHellComponent } from './src/concepts/promise-hell';
 import { promiseAllComponent } from './src/concepts/promise-all';
 import { promiseRaceComponent } from './src/concepts/04-promise-race';
 import { asyncComponent } from './src/concepts/05-async';
+import { asyncAwait2Component } from './src/concepts/07-async-await-promises-no-secuenciales';
+import { forAwaitComponent } from './src/concepts/08-for-await';
+import { generatorFunctionsComponent } from './src/concepts/09-generator-functions';
+// import { asyncAwaitComponent } from './src/concepts/06-async-await';
 
 
 document.querySelector('#app').innerHTML = `
@@ -34,4 +38,7 @@ const element = document.querySelector('.card');
 // promiseHellComponent( element );
 // promiseAllComponent( element );
 // promiseRaceComponent( element );
-asyncComponent( element );
+// asyncComponent( element );
+// asyncAwait2Component( element );
+// forAwaitComponent( element );
+generatorFunctionsComponent( element );
