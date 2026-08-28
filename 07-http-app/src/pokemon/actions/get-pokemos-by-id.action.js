@@ -14,7 +14,7 @@ export const getPokemonById = async ( id ) => {
     const pokemonData = {
         id: data.id,
         name: data.name,
-        imagen: data.sprites.front_default
+        image: data.sprites.front_default
     }
     console.log( {pokemonData} );
 
