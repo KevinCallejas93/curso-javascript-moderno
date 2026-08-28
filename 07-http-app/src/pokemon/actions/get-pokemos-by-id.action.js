@@ -1,4 +1,6 @@
 
+const pokemonCache = new Map(); //utilizamos el new Map() para crear una memoria cache
+                                //la idea es que la peticion http no se vuelva a hacer si ya hemos cargado la data antes
 
 /**
  * Fetch Pokemon information from PokeAPI
@@ -6,6 +8,12 @@
  * @returns { Promise <Object> } Pokemon Information
  */
 export const getPokemonById = async ( id ) => {
+
+    if ( pokemonCache.has(id)) {
+        console.log('Servido de cache');
+
+        return pokemonCache.get( id );
+    }
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${ id }`);
     const data = await response.json();
@@ -16,28 +24,10 @@ export const getPokemonById = async ( id ) => {
         name: data.name,
         image: data.sprites.front_default
     }
-    console.log( {pokemonData} );
 
+    pokemonCache.set( id, pokemonData ); //Establecemos el set con id y con pokemonData porque nos pide una key y un value
+                                        //En este caso el id es la key y el value el objeto literal
     return pokemonData;
-  
-    //Forma mas tediosa y asi se hacia antes, aun podemos encontrar codigo asi
-    // fetch(`https://pokeapi.co/api/v2/pokemon/${ id }`)
-    // .then( response => { 
-        // console.log({response});
-        // throw new Error('Pokemon not found');
-        
-    //     return response.json();
-
-    // })
-    // .then ( data => {
-    //     console.log( {data} );
-    // })
-    // .catch ( 
-    //     error => {
-        // console.error(error);
-    //     })
-
-    // return {}
 
 };
 

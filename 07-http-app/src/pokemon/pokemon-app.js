@@ -37,17 +37,32 @@ export const PokemonApp = async( element ) => {
 
     //!Listeners de los botones
 
-    nextBtn.addEventListener( 'click', (  ) => {
+    nextBtn.addEventListener( 'click', async() => {
 
         loadingParagraph.textContent = 'Cargando siguiente pokemon...';
+
+        pokemonID++;
+
+        renderPokemon( await getPokemonById( pokemonID ));
+    })
+
+    prevBtn.addEventListener('click', async() => {
+        
+        if (pokemonID === 1) return;
+
+        loadingParagraph.textContent = 'Cargando pokemon anterior...'
+        pokemonID--;
+
+        renderPokemon( await getPokemonById( pokemonID ));
+
+        
     })
 
     //! Renderizar el Pokemon
     const renderPokemon = ( pokemon ) => {
 
         pokemonImage.src = pokemon.image;
-        loadingParagraph.textContent = `Pokemon #${ pokemon.id } ${ pokemon.name }`
-
+        loadingParagraph.textContent = `Pokemon #${ pokemon.id } ${ pokemon.name }`;
 
     };
 
