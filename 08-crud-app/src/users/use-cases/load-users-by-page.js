@@ -12,10 +12,12 @@ export const loadUsersByPage = async( page = 1 ) => {
 
     const url = `${ import.meta.env.VITE_BASE_URL }/users?_page=${ page }`;
     const res = await fetch ( url );
-    const data = await res.json();
 
-    const users = data.data.map( localHostUserToModel ); //Es data.data porque una es la constante y la otra es la propiedad del objeto en crudo
+    const { data, pages } = await res.json();
 
-    return users;
+    const users = data.map( localHostUserToModel ); 
+
+    
+    return { users, pages };
 
 };
